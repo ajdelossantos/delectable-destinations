@@ -1,6 +1,10 @@
-## What is this?
+## Delectable Destinations
 
-Just you wait folks!
+A restaurant review application built on Node, Express, and MongoDB.
+
+## Installation
+
+1. TBD
 
 ## Sample Data
 
