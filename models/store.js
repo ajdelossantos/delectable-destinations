@@ -14,8 +14,21 @@ const storeSchema = new mongoose.Schema({
     required: 'Please entor a store name'
   },
   slug: String,
-  description: '',
-  tags: ''
+  description: {
+    type: String,
+    trim: true
+  },
+  tags: [String]
+});
+
+// need to pass storeSchema scope, so no arrow functions
+storeSchema.pre('save', function(next) {
+  if (!this.isModified('name')) {
+    next();
+    return;
+  }
+  this.slug = slug(this.name);
+  next();
 });
 
 module.exports = mongoose.model('Store', storeSchema);
