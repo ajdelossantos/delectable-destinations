@@ -4,6 +4,5 @@ include mixins/_storeForm
 
 block content
   .inner
-    //- interpolation works too "h2= title"
     h2 #{title}
-    +storeForm()
+    +storeForm(store)
